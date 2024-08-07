@@ -1,16 +1,12 @@
-import { createRoot } from "react-dom/client";
 import React from "react";
+import ReactDOM from "react-dom";
 import { CustomWidget } from "./components/custom-widget";
 
-export const normalizeAttribute = (attribute: string): string => {
+export const normalizeAttribute = (attribute: string) => {
   return attribute.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
 };
 
-interface WidgetProps {
-  [key: string]: string;
-}
-
-class WidgetWebComponent extends HTMLElement {
+export class WidgetWebComponent extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -18,17 +14,19 @@ class WidgetWebComponent extends HTMLElement {
 
   connectedCallback() {
     const props = this.getPropsFromAttributes();
-    const root = createRoot(this.shadowRoot as ShadowRoot);
-    root.render(
+    const container = document.createElement("div");
+    this.shadowRoot?.appendChild(container);
+    ReactDOM.render(
       React.createElement(CustomWidget, {
-        projectid: props.projectid,
         ...props,
-      })
+        projectid: "your-project-id",
+      }),
+      container
     );
   }
 
-  getPropsFromAttributes(): WidgetProps {
-    const props: WidgetProps = {};
+  getPropsFromAttributes() {
+    const props: { [key: string]: string } = {};
     for (const attr of Array.from(this.attributes)) {
       props[normalizeAttribute(attr.name)] = attr.value;
     }
@@ -37,5 +35,4 @@ class WidgetWebComponent extends HTMLElement {
 }
 
 customElements.define("widget-web-component", WidgetWebComponent);
-
 export default WidgetWebComponent;

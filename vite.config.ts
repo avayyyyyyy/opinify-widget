@@ -15,7 +15,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.tsx"),
-      name: "widget",
+      name: "Widget",
       fileName: (format) => `widget.${format}.js`,
       formats: ["es", "umd"],
     },
