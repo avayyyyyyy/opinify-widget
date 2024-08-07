@@ -52,7 +52,7 @@ export const CustomWidget = ({ projectid }: { projectid: string }) => {
       <style>{tailwindStyles}</style>
       <Dialog>
         <DialogTrigger asChild>
-          <Button className="flex fixed bottom-6 bg-black hover:bg-black/80 text-white right-6 gap-2 rounded-md rounded-ful z-[1000000000000]">
+          <Button className="flex fixed bottom-6 bg-black hover:bg-black/80 text-white right-6 gap-2 rounded-full z-[1000000000000]">
             Feedback
             <MessageCircle size={16} />
           </Button>
