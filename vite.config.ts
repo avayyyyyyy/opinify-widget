@@ -17,10 +17,9 @@ export default defineConfig({
       entry: path.resolve(__dirname, "src/index.tsx"),
       name: "widget",
       fileName: (format) => `widget.${format}.js`,
-      formats: ["es", "umd"], // Specify the formats you need
+      formats: ["es", "umd"],
     },
     rollupOptions: {
-      // External dependencies if building for a library
       external: ["react", "react-dom"],
       output: {
         globals: {
