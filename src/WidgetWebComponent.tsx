@@ -18,8 +18,8 @@ export class WidgetWebComponent extends HTMLElement {
     this.shadowRoot?.appendChild(container);
     ReactDOM.render(
       React.createElement(CustomWidget, {
+        projectid: props.projectid,
         ...props,
-        projectid: "your-project-id",
       }),
       container
     );
