@@ -27,6 +27,7 @@ export const CustomWidget = ({ projectid }: { projectid: string }) => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
+    setLoading(true);
     const res = await fetch("https://opinify.in/api/feedback", {
       method: "POST",
       headers: {
