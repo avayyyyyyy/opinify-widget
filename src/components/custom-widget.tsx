@@ -154,7 +154,11 @@ export const CustomWidget = ({ projectid }: { projectid: string }) => {
               </DialogFooter>
               <p className="text-center my-3 text-sm text-black/70">
                 Feature Implemented by{" "}
-                <a href="#" className="font-bold text-black">
+                <a
+                  href="https://opinify.in/"
+                  target="_blank"
+                  className="font-bold text-black"
+                >
                   Opinify 🚀
                 </a>
               </p>
