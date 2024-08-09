@@ -140,7 +140,7 @@ export const CustomWidget = ({ projectid }: { projectid: string }) => {
               <DialogFooter>
                 {loading ? (
                   <Button disabled={loading} className="w-full">
-                    <Loader size={16} className="animate-spin w-full" />
+                    <Loader size={16} className="animate-spin" />
                   </Button>
                 ) : (
                   <Button
