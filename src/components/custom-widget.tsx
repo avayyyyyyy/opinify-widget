@@ -122,11 +122,11 @@ export const CustomWidget = ({ projectid }: { projectid: string }) => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="rating">Ratings:</Label>
-                  <div className="flex items-center gap-2 hover:cursor-pointer">
+                  <div className="flex items-center gap-2 ">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <StarIcon
                         key={star}
-                        className={`w-6 h-6 ${
+                        className={`w-6 h-6 hover:cursor-pointer ${
                           star <= rating
                             ? "fill-primary"
                             : "fill-muted stroke-muted-foreground"
