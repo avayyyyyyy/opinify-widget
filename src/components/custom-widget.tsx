@@ -41,9 +41,9 @@ export const CustomWidget = ({ projectid }: { projectid: string }) => {
     if (data.success) {
       setSubmitted(true);
       setLoading(false);
-      toast.success("Feedback submitted successfully!");
+      toast.success("Feedback submitted successfully! 🚀");
     } else {
-      toast.error(data.message);
+      toast.error("Unable to submit feedback. Please try again later. 😞");
       setLoading(false);
     }
   };
